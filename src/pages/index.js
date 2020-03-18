@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Card from '../components/card';
+import Section from '../components/section';
+import Wave from '../components/wave';
+
 
 const IndexPage = () => (
   <div>
-    
     <div className="Hero">
         <div className="HeroGroup">
           <h1>Welcome to<br/>Church in San Jose</h1>
@@ -18,41 +20,42 @@ const IndexPage = () => (
             <img src={require('../images/logo-react.png')} width="50" />
             <img src={require('../images/logo-swift.png')} width="50" />
           </div>
-          <svg width="100%" height="172" viewBox="0 0 100% 172" fill="none">
-            <path fill="white">
-            <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="10s" 
-            values="M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z;
-
-            M0 86.3149C316 86.315 444 159.155 884 51.1554C1324 -56.8446 1320.29 34.1214 1538 70.4063C1814 116.407 2156 188.408 2560 86.315V232.317L0 232.316V86.3149Z;
-
-            M0 53.6584C158 11.0001 213 0 363 0C513 0 855.555 115.001 1154 115.001C1440 115.001 1626 -38.0004 2560 53.6585V199.66L0 199.66V53.6584Z;
-
-            M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z;" />
-            </path>
-          </svg>
+          <Wave/>
         </div>
     </div>
     <div className="Cards">
-      <h2>11 courses, more coming</h2>
+      <h2>The Lord loves us before we love Him.</h2>
       <div className="CardGroup">
         <Card 
-          title="DesignSystem"
-          text="10 sections"
+          title="Announcements"
+          text="Last update 1 day ago"
           image={require('../images/wallpaper.jpg')} />
         <Card 
-          title="React for Designers"
-          text="11 sections"
+          title="Readings"
+          text="Last update 2 days ago"
           image={require('../images/wallpaper2.jpg')} />
         <Card 
-          title="Sound Design"
-          text="5 sections"
+          title="Church Services"
+          text="Last update 3 hours ago"
           image={require('../images/wallpaper3.jpg')} />
         <Card 
-          title="ARKit 2"
-          text="10 sections"
+          title="Contact Us"
+          text="Last update 1 month ago"
           image={require('../images/wallpaper4.jpg')} />
       </div>
     </div>
+    <Section
+      image={require('../images/wallpaper2.jpg')}
+      logo={require('../images/logo-react.png')}
+      title="About Us"
+      text="We are believers in the Lord Jesus Christ who have personally received Him as our Savior. He is the most excellent and enjoyable Person.
+      We love Him and endeavor to give Him the first place in all things.
+      We rejoice to be cleansed by the blood of Jesus, God’s Son, born again of the Father’s divine life, and filled with the Holy Spirit.
+      We highly treasure the Holy Bible as God’s revelation of Himself and of His eternal purpose.
+      We hold the common faith which is revealed in the Bible and is common to all genuine believers.
+      As is true of all believers in Christ, we are members of His one Body, the church. In order to practice the oneness of the Body with all the Christians in San Jose, we meet as the Church in San Jose.
+      We are in fellowship with over 2,000 local churches worldwide to express the one Body of Christ."
+      />
     <Link to="/page-2/">Go to page 2</Link>
     <footer>© 2020 Church in San Jose. Built by Yumei Jin</footer>
   </div>
