@@ -3,7 +3,31 @@ import Link from 'gatsby-link'
 import Card from '../components/card';
 import Section from '../components/section';
 import Wave from '../components/wave';
+import staticdata from '../../staticdata.json'
+import styled from 'styled-components'
+import Cell from '../components/cell'
 
+
+const SectionCaption = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #94A4BA;
+  text-align: center;
+`
+
+const SectionCellGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
 
 const IndexPage = () => (
   <div>
@@ -56,9 +80,18 @@ const IndexPage = () => (
       As is true of all believers in Christ, we are members of His one Body, the church. In order to practice the oneness of the Body with all the Christians in San Jose, we meet as the Church in San Jose.
       We are in fellowship with over 2,000 local churches worldwide to express the one Body of Christ."
       />
+
+      <SectionCaption>12 sections - 6 hours</SectionCaption>
+      <SectionCellGroup>
+        {staticdata.cells.map(cell => (
+          <Cell title={cell.title} image={cell.image} />
+        ))}
+      </SectionCellGroup>
+
     <Link to="/page-2/">Go to page 2</Link>
-    <footer>© 2020 Church in San Jose. Built by Yumei Jin</footer>
   </div>
+
+  
   
 )
 
